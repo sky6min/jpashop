@@ -28,7 +28,7 @@ class MemberRepositoryTest {
     public void testMember() throws Exception {
         //given
         Member member = new Member();
-        member.setUsername("memberA");
+        member.setName("memberA");
 
         //when
         Long savedId = memberRepository.save(member);
@@ -36,7 +36,7 @@ class MemberRepositoryTest {
 
         //then
         org.assertj.core.api.Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-        org.assertj.core.api.Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+        org.assertj.core.api.Assertions.assertThat(findMember.getName()).isEqualTo(member.getName());
         org.assertj.core.api.Assertions.assertThat(findMember).isEqualTo(member);
     }
 }
